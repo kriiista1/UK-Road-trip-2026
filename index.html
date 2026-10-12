@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-TW"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;UK Road Trip 2026-2027 | 英國自駕漫遊&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts &amp; FontAwesome --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=Playfair+Display:ital,wght@0,600;1,400&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #F8F9FA;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #1A1A1A;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #6C757D;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--accent-navy: #002447;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--accent-red: #C8102E;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #E9ECEF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Header &amp; Hero Area */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FFF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 60px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header p { font-size: 1.1rem; color: #ADB5BD; font-weight: 300; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Countdown Banner */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.countdown-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #111827;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #FFF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 3px solid var(--accent-red);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.time-box { text-align: center; min-width: 60px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.time-box span { display: block; font-size: 1.5rem; font-weight: 700; color: #F3F4F6; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Navigation Tabs */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 3px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: var(--transition);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav button.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom-color: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Main Container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 30px auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-content { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tab-content.active { display: block; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Cards Style */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 6px rgba(0,0,0,0.02);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Timeline / Daily Itinerary */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-title { font-size: 1.2rem; font-weight: 700; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tag {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #E0E7FF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tag.drive { background: #FEF3C7; color: #92400E; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tag.train { background: #D1FAE5; color: #065F46; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.timeline-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px dashed var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.timeline-item:last-child { border-bottom: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.time { font-weight: 600; color: var(--accent-red); width: 80px; display: inline-block; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.location-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #F3F4F6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.location-btn:hover { background: #E5E7EB; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Checklist Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 600px) { .checkbox-group { grid-template-columns: 1fr; } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.checkbox-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #F9FAFB;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent-navy); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Rules List */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rule-list { list-style: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rule-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #FFF5F5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 3px solid var(--accent-red);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0 8px 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Split Bill Calculator */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calc-input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calc-input input, .calc-input select {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent-navy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover { background: #001830; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Diary / Photo Log */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.diary-entry {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.diary-entry img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Map Embed Placeholder */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.map-frame {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 350px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;UK ROAD TRIP&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;2026.12.29 — 2027.01.11 | 倫敦 · 巴斯 · 布里斯托 · 利物浦 · 紐卡索 · 達勒姆 · 約克 · 勒茲&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 倒數計時器 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="countdown-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;距離出發英倫還剩：&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="time-box"&gt;&lt;span id="days"&gt;00&lt;/span&gt;天&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="time-box"&gt;&lt;span id="hours"&gt;00&lt;/span&gt;時&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="time-box"&gt;&lt;span id="minutes"&gt;00&lt;/span&gt;分&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="time-box"&gt;&lt;span id="seconds"&gt;00&lt;/span&gt;秒&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 導覽頁籤 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-link active" onclick="openTab(event, 'itinerary')"&gt;&lt;i class="fa-solid fa-calendar-days"&gt;&lt;/i&gt; 每日行程&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-link" onclick="openTab(event, 'map')"&gt;&lt;i class="fa-solid fa-map-location-dot"&gt;&lt;/i&gt; 路線地圖&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-link" onclick="openTab(event, 'prep')"&gt;&lt;i class="fa-solid fa-clipboard-check"&gt;&lt;/i&gt; 行前準備&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-link" onclick="openTab(event, 'rules')"&gt;&lt;i class="fa-solid fa-gavel"&gt;&lt;/i&gt; 約法三章&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-link" onclick="openTab(event, 'split')"&gt;&lt;i class="fa-solid fa-calculator"&gt;&lt;/i&gt; 分帳計算機&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="tab-link" onclick="openTab(event, 'diary')"&gt;&lt;i class="fa-solid fa-camera"&gt;&lt;/i&gt; 旅遊日記&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 1. 每日行程 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="itinerary" class="tab-content active"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 1 | 12/29 (二) 啟程與抵達倫敦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag"&gt;飛行日&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;08:45&lt;/span&gt; 台灣桃園機場起飛</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;17:00&lt;/span&gt; 抵達倫敦希斯洛機場 (LHR)，辦理入境手續與搭車前往市區</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;20:00&lt;/span&gt; 飯店 Check-in，享用倫敦第一頓晚餐</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=London" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 倫敦市區&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 2-3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 2 - 3 | 12/30 (三) - 12/31 (四) 倫敦經典與跨年&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag"&gt;城市漫遊&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;全天&lt;/span&gt; 倫敦經典地標：大笨鐘、倫敦眼、大英博物館</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=Big+Ben" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 大笨鐘&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=British+Museum" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 大英博物館&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;美食&lt;/span&gt; 英式下午茶推薦、老英格蘭酒吧</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;12/31 跨年&lt;/span&gt; 泰晤士河畔跨年煙火秀！迎接 2027 年 🎉</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 4 | 01/01 (五) 倫敦 ➔ 巨石陣 ➔ 巴斯&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag drive"&gt;自駕啟動&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;09:00&lt;/span&gt; 倫敦取車，開啟自駕公路之旅</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;11:30&lt;/span&gt; 停留：神秘神秘巨石陣 (Stonehenge)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=Stonehenge" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 巨石陣&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;16:00&lt;/span&gt; 抵達古典小鎮巴斯 (Bath)，入住飯店</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 5-6 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 5 - 6 | 01/02 (六) - 01/03 (日) 深度感受巴斯&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag"&gt;古蹟巡禮&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;景點&lt;/span&gt; 羅馬浴場 (Roman Baths)、皇家新月樓、普爾特尼橋</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=Roman+Baths+Bath" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 羅馬浴場&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;美食&lt;/span&gt; Sally Lunn's 經典圓麵包、巴斯溫泉體驗</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 7 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 7 | 01/04 (一) 巴斯 ➔ 布里斯托 (住城堡!)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag drive"&gt;城堡之夜&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;10:00&lt;/span&gt; 開車前往 Bristol，參觀克里夫頓吊橋 (Clifton Suspension Bridge)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;15:00&lt;/span&gt; 城堡飯店 Check-in，享受貴族奢華之夜</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 8-9 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 8 - 9 | 01/05 (二) - 01/07 (四) 布里斯托 ➔ 火車前往利物浦&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag train"&gt;火車移動&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;1/5 09:30&lt;/span&gt; Bristol 還車，搭乘火車前往 Liverpool</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;景點&lt;/span&gt; 披頭四紀念館 (The Beatles Story)、阿爾伯特碼頭、洞穴俱樂部 (The Cavern Club)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=Albert+Dock+Liverpool" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 阿爾伯特碼頭&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 10-11 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 10 - 11 | 01/07 (四) - 01/09 (六) 紐卡索 &amp; 畢業典禮大日子!&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag train"&gt;重點行程&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;1/7 下午&lt;/span&gt; 火車抵達 Newcastle Upon Tyne，泰恩橋夜景散步</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;01/08 ❤️&lt;/span&gt; &lt;b&gt;妹畢業典禮 day！前往 Durham 大學／大教堂參加典禮！&lt;/b&gt; 🎓✨</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=Durham+Cathedral" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 達勒姆大教堂&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 12 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 12 | 01/09 (六) 紐卡索 ➔ 約克(半日遊) ➔ 勒茲&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag train"&gt;古城巡禮&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;09:00&lt;/span&gt; 搭火車前往約克 (York)，寄放行李</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;景點&lt;/span&gt; 肉鋪街 (The Shambles 哈利波特斜角巷原型)、約克大教堂、肉鋪街下午茶</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://maps.google.com/?q=The+Shambles+York" target="_blank" class="location-btn"&gt;&lt;i class="fa-solid fa-map-pin"&gt;&lt;/i&gt; 肉鋪街&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;17:00&lt;/span&gt; 搭火車前往勒茲 (Leeds)，入住飯店</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Day 13-14 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="day-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="day-title"&gt;Day 13 - 14 | 01/10 (日) - 01/11 (一) Leeds ➔ 倫敦 ➔ 台灣&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="tag"&gt;完美賦歸&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;1/10 下午&lt;/span&gt; 從 Leeds 搭火車返回倫敦，最後採買購物</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;1/11 17:00&lt;/span&gt; 前往 Heathrow 機場辦理退稅與登機</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="time"&gt;1/11 21:15&lt;/span&gt; 搭機飛往台灣，帶著滿滿回憶回家！✈️</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 2. 路線地圖 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="map" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;&lt;i class="fa-solid fa-route"&gt;&lt;/i&gt; 自駕與火車路線總覽&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="margin-bottom: 15px; color: var(--text-muted);"&gt;路線：倫敦 ➔ 巨石陣 ➔ 巴斯 ➔ 布里斯托 (自駕結束) ➔ 利物浦 ➔ 紐卡索 (達勒姆) ➔ 約克 ➔ 勒茲 ➔ 倫敦 (火車)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2483868.528435198!2d-3.5186835005886634!3d52.88085429188092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!3m2!1d51.5072178!2d-0.1275862!4m5!1s0x487183ca2052c937%3A0xd65355609424e756!2sBath!3m2!1d51.381064!2d-2.359016!5e0!3m2!1szh-TW!2stw!4v1680000000000!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 3. 行前準備 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="prep" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;&lt;i class="fa-solid fa-suitcase"&gt;&lt;/i&gt; 行李檢查清單&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="checkbox-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 護照（效期 6 個月以上）&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 國際駕照 + 台灣駕照正本&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 英規轉接頭 (Type G) 2-3個&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 信用卡（開通海外刷卡與PIN碼）&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 英國 eSIM / 上網卡&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 保暖大衣、圍巾、防水發熱衣&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 個人常備藥品、感冒藥&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="checkbox-item"&gt;&lt;input type="checkbox"&gt; 妹妹畢業典禮正式服裝&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;&lt;i class="fa-solid fa-ticket"&gt;&lt;/i&gt; 預約憑證與交通資訊&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;b&gt;租車公司：&lt;/b&gt; 倫敦取車 / Bristol 還車&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;b&gt;火車票券：&lt;/b&gt; LNER / Avanti West Coast（提前下載 National Rail App）&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;b&gt;緊急電話：&lt;/b&gt; 英國報警/救護車請撥 999 或 111（非緊急）&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 4. 約法三章 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="rules" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;&lt;i class="fa-solid fa-handshake"&gt;&lt;/i&gt; 旅伴搞笑和平條約 (違反者請喝啤酒)&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="rule-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;b&gt;第一條：駕駛至上條款&lt;/b&gt;&lt;br&gt;副駕不得睡覺！必須負責看導航、拿零食、切換 DJ 播歌，並適時給予駕駛誇獎。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;b&gt;第二條：英國天氣情緒管理&lt;/b&gt;&lt;br&gt;如果下雨、天黑太早或遇到圓環走錯路，嚴禁發脾氣！一律用「這就是道地的英倫風情啦」帶過。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;b&gt;第三條：拍照耐心原則&lt;/b&gt;&lt;br&gt;幫對方拍照必須拍到滿意為止，拍照者不得發出嘖聲，被照者不得要求超過 50 張。&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;b&gt;第四條：畢業典禮最高指令&lt;/b&gt;&lt;br&gt;1/8 妹妹畢業典禮當天，所有人必須化身「頂級親友攝影團」，捕捉最美的瞬間！&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 5. 分帳計算機 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="split" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;&lt;i class="fa-solid fa-coins"&gt;&lt;/i&gt; 公費與分帳計算機 (GBP £)&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="calc-input"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="item-name" placeholder="消費項目（例如：巨石陣門票、城堡晚餐）"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" id="item-amount" placeholder="金額 (£)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="payer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="成員 A"&gt;成員 A 先付&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="成員 B"&gt;成員 B 先付&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="成員 C"&gt;成員 C 先付&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-primary" onclick="addExpense()"&gt;新增消費紀錄&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="expense-list"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;總計：£ &lt;span id="total-amount"&gt;0&lt;/span&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p id="split-result" style="margin-top: 10px; color: var(--accent-navy); font-weight: 600;"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 6. 旅遊日記與相簿 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="diary" class="tab-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;&lt;i class="fa-solid fa-pen-to-square"&gt;&lt;/i&gt; 隨手記 &amp; 回憶牆&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="calc-input"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;textarea id="diary-note" rows="3" placeholder="記錄今天發生的搞笑事或感觸..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="file" id="diary-photo" accept="image/*"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-primary" onclick="addDiary()"&gt;發佈日誌&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="diary-list"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Tab 切換邏輯</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openTab(evt, tabName) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let i, tabcontent, tablinks;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tabcontent = document.getElementsByClassName("tab-content");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (i = 0; i &lt; tabcontent.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tabcontent[i].classList.remove("active");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tablinks = document.getElementsByClassName("tab-link");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (i = 0; i &lt; tablinks.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tablinks[i].classList.remove("active");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(tabName).classList.add("active");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>evt.currentTarget.classList.add("active");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 倒數計時器 (目標日期：2026/12/29 08:45)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const targetDate = new Date('December 29, 2026 08:45:00').getTime();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateCountdown() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const now = new Date().getTime();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const difference = targetDate - now;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (difference &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const days = Math.floor(difference / (1000 * 60 * 60 * 24));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const seconds = Math.floor((difference % (1000 * 60)) / 1000);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('days').innerText = days &lt; 10 ? '0' + days : days;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('hours').innerText = hours &lt; 10 ? '0' + hours : hours;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('minutes').innerText = minutes &lt; 10 ? '0' + minutes : minutes;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('seconds').innerText = seconds &lt; 10 ? '0' + seconds : seconds;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.querySelector('.countdown-container').innerHTML = "&lt;b&gt;🎉 英國之旅已經開啟囉！享受假期！&lt;/b&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setInterval(updateCountdown, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateCountdown();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 分帳計算機邏輯</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let expenses = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function addExpense() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const name = document.getElementById('item-name').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const amount = parseFloat(document.getElementById('item-amount').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const payer = document.getElementById('payer').value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!name || isNaN(amount)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('請輸入有效的項目名稱與金額！');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>expenses.push({ name, amount, payer });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateExpenseUI();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('item-name').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('item-amount').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateExpenseUI() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const list = document.getElementById('expense-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let total = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>expenses.forEach((item) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>total += item.amount;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.style.padding = '8px 0';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.style.borderBottom = '1px solid #eee';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.innerText = `${item.payer} 付了 £${item.amount} — ${item.name}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>list.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('total-amount').innerText = total.toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const perPerson = (total / 3).toFixed(2); // 假設預設 3 人，可自行調整</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('split-result').innerText = `平均每人應負擔：£${perPerson} (以 3 人計算)`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 日記發佈邏輯</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function addDiary() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const text = document.getElementById('diary-note').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const photoInput = document.getElementById('diary-photo');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const list = document.getElementById('diary-list');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!text &amp;&amp; photoInput.files.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('請輸入文字或選擇照片！');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.className = 'diary-entry';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let html = `&lt;p style="font-size:0.85rem; color:#888;"&gt;${new Date().toLocaleString()}&lt;/p&gt;&lt;p&gt;${text}&lt;/p&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (photoInput.files &amp;&amp; photoInput.files[0]) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const reader = new FileReader();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reader.onload = function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>html += `&lt;img src="${e.target.result}"&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>div.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>list.prepend(div);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reader.readAsDataURL(photoInput.files[0]);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>list.prepend(div);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('diary-note').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>photoInput.value = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
