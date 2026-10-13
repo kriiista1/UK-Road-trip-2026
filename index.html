@@ -1,40 +1,609 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Road Trip 2026-2027 | 英國自駕漫遊</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-main: #1A1A1A;
+            --text-muted: #6C757D;
+            --accent-navy: #002447;
+            --accent-red: #C8102E;
+            --card-bg: #FFFFFF;
+            --border-color: #E9ECEF;
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header & Hero Area */
+        header {
+            background-color: var(--accent-navy);
+            color: #FFF;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        header p { font-size: 1.1rem; color: #ADB5BD; font-weight: 300; }
+
+        /* Countdown Banner */
+        .countdown-container {
+            background: #111827;
+            color: #FFF;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            font-size: 0.9rem;
+            border-bottom: 3px solid var(--accent-red);
+        }
+        .time-box { text-align: center; min-width: 60px; }
+        .time-box span { display: block; font-size: 1.5rem; font-weight: 700; color: #F3F4F6; }
+
+        /* Navigation Tabs */
+        nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+        nav button {
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+        nav button.active {
+            color: var(--accent-navy);
+            border-bottom-color: var(--accent-navy);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Cards Style */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-navy);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Timeline / Daily Itinerary */
+        .day-card {
+            border-left: 4px solid var(--accent-navy);
+            position: relative;
+        }
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .day-title { font-size: 1.2rem; font-weight: 700; }
+        .tag {
+            background: #E0E7FF;
+            color: var(--accent-navy);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .tag.drive { background: #FEF3C7; color: #92400E; }
+        .tag.train { background: #D1FAE5; color: #065F46; }
+
+        .timeline-item {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .timeline-item:last-child { border-bottom: none; }
+        .time { font-weight: 600; color: var(--accent-red); width: 80px; display: inline-block; }
+        .location-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--accent-navy);
+            text-decoration: none;
+            font-size: 0.85rem;
+            background: #F3F4F6;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 5px;
+        }
+        .location-btn:hover { background: #E5E7EB; }
+
+        /* Checklist Section */
+        .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        @media (max-width: 600px) { .checkbox-group { grid-template-columns: 1fr; } }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #F9FAFB;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent-navy); }
+
+        /* Rules List */
+        .rule-list { list-style: none; }
+        .rule-list li {
+            padding: 12px 15px;
+            background: #FFF5F5;
+            border-left: 3px solid var(--accent-red);
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Split Bill Calculator */
+        .calc-input {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .calc-input input, .calc-input select {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: var(--accent-navy);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .btn-primary:hover { background: #001830; }
+
+        /* Diary / Photo Log */
+        .diary-entry {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+        .diary-entry img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Map Embed Placeholder */
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: var(--radius);
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-TW"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;UK Road Trip 2026-2027 | 英國自駕漫遊&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts &amp; FontAwesome --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=Playfair+Display:ital,wght@0,600;1,400&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #F8F9FA;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #1A1A1A;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #6C757D;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-navy: #002447;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-red: #C8102E;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #E9ECEF;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--transition: all 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
+
+    <header>
+        <h1>UK ROAD TRIP</h1>
+        <p>2026.12.29 — 2027.01.11 | 倫敦 · 巴斯 · 布里斯托 · 利物浦 · 紐卡索 · 達勒姆 · 約克 · 勒茲</p>
+    </header>
+
+    <!-- 倒數計時器 -->
+    <div class="countdown-container">
+        <div>距離出發英倫還剩：</div>
+        <div class="time-box"><span id="days">00</span>天</div>
+        <div class="time-box"><span id="hours">00</span>時</div>
+        <div class="time-box"><span id="minutes">00</span>分</div>
+        <div class="time-box"><span id="seconds">00</span>秒</div>
+    </div>
+
+    <!-- 導覽頁籤 -->
+    <nav>
+        <button class="tab-link active" onclick="openTab(event, 'itinerary')"><i class="fa-solid fa-calendar-days"></i> 每日行程</button>
+        <button class="tab-link" onclick="openTab(event, 'map')"><i class="fa-solid fa-map-location-dot"></i> 路線地圖</button>
+        <button class="tab-link" onclick="openTab(event, 'prep')"><i class="fa-solid fa-clipboard-check"></i> 行前準備</button>
+        <button class="tab-link" onclick="openTab(event, 'rules')"><i class="fa-solid fa-gavel"></i> 約法三章</button>
+        <button class="tab-link" onclick="openTab(event, 'split')"><i class="fa-solid fa-calculator"></i> 分帳計算機</button>
+        <button class="tab-link" onclick="openTab(event, 'diary')"><i class="fa-solid fa-camera"></i> 旅遊日記</button>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. 每日行程 -->
+        <div id="itinerary" class="tab-content active">
+            
+            <!-- Day 1 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 1 | 12/29 (二) 啟程與抵達倫敦</span>
+                    <span class="tag">飛行日</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">08:45</span> 台灣桃園機場起飛
+                </div>
+                <div class="timeline-item">
+                    <span class="time">17:00</span> 抵達倫敦希斯洛機場 (LHR)，辦理入境手續與搭車前往市區
+                </div>
+                <div class="timeline-item">
+                    <span class="time">20:00</span> 飯店 Check-in，享用倫敦第一頓晚餐
+                    <a href="https://maps.google.com/?q=London" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 倫敦市區</a>
+                </div>
+            </div>
+
+            <!-- Day 2-3 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 2 - 3 | 12/30 (三) - 12/31 (四) 倫敦經典與跨年</span>
+                    <span class="tag">城市漫遊</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">全天</span> 倫敦經典地標：大笨鐘、倫敦眼、大英博物館
+                    <a href="https://maps.google.com/?q=Big+Ben" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 大笨鐘</a>
+                    <a href="https://maps.google.com/?q=British+Museum" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 大英博物館</a>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">美食</span> 英式下午茶推薦、老英格蘭酒吧
+                </div>
+                <div class="timeline-item">
+                    <span class="time">12/31 跨年</span> 泰晤士河畔跨年煙火秀！迎接 2027 年 🎉
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 4 | 01/01 (五) 倫敦 ➔ 巨石陣 ➔ 巴斯</span>
+                    <span class="tag drive">自駕啟動</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">09:00</span> 倫敦取車，開啟自駕公路之旅
+                </div>
+                <div class="timeline-item">
+                    <span class="time">11:30</span> 停留：神秘神秘巨石陣 (Stonehenge)
+                    <a href="https://maps.google.com/?q=Stonehenge" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 巨石陣</a>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">16:00</span> 抵達古典小鎮巴斯 (Bath)，入住飯店
+                </div>
+            </div>
+
+            <!-- Day 5-6 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 5 - 6 | 01/02 (六) - 01/03 (日) 深度感受巴斯</span>
+                    <span class="tag">古蹟巡禮</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">景點</span> 羅馬浴場 (Roman Baths)、皇家新月樓、普爾特尼橋
+                    <a href="https://maps.google.com/?q=Roman+Baths+Bath" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 羅馬浴場</a>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">美食</span> Sally Lunn's 經典圓麵包、巴斯溫泉體驗
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 7 | 01/04 (一) 巴斯 ➔ 布里斯托 (住城堡!)</span>
+                    <span class="tag drive">城堡之夜</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">10:00</span> 開車前往 Bristol，參觀克里夫頓吊橋 (Clifton Suspension Bridge)
+                </div>
+                <div class="timeline-item">
+                    <span class="time">15:00</span> 城堡飯店 Check-in，享受貴族奢華之夜
+                </div>
+            </div>
+
+            <!-- Day 8-9 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 8 - 9 | 01/05 (二) - 01/07 (四) 布里斯托 ➔ 火車前往利物浦</span>
+                    <span class="tag train">火車移動</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1/5 09:30</span> Bristol 還車，搭乘火車前往 Liverpool
+                </div>
+                <div class="timeline-item">
+                    <span class="time">景點</span> 披頭四紀念館 (The Beatles Story)、阿爾伯特碼頭、洞穴俱樂部 (The Cavern Club)
+                    <a href="https://maps.google.com/?q=Albert+Dock+Liverpool" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 阿爾伯特碼頭</a>
+                </div>
+            </div>
+
+            <!-- Day 10-11 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 10 - 11 | 01/07 (四) - 01/09 (六) 紐卡索 & 畢業典禮大日子!</span>
+                    <span class="tag train">重點行程</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1/7 下午</span> 火車抵達 Newcastle Upon Tyne，泰恩橋夜景散步
+                </div>
+                <div class="timeline-item">
+                    <span class="time">01/08 ❤️</span> <b>妹畢業典禮 day！前往 Durham 大學／大教堂參加典禮！</b> 🎓✨
+                    <a href="https://maps.google.com/?q=Durham+Cathedral" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 達勒姆大教堂</a>
+                </div>
+            </div>
+
+            <!-- Day 12 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 12 | 01/09 (六) 紐卡索 ➔ 約克(半日遊) ➔ 勒茲</span>
+                    <span class="tag train">古城巡禮</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">09:00</span> 搭火車前往約克 (York)，寄放行李
+                </div>
+                <div class="timeline-item">
+                    <span class="time">景點</span> 肉鋪街 (The Shambles 哈利波特斜角巷原型)、約克大教堂、肉鋪街下午茶
+                    <a href="https://maps.google.com/?q=The+Shambles+York" target="_blank" class="location-btn"><i class="fa-solid fa-map-pin"></i> 肉鋪街</a>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">17:00</span> 搭火車前往勒茲 (Leeds)，入住飯店
+                </div>
+            </div>
+
+            <!-- Day 13-14 -->
+            <div class="card day-card">
+                <div class="day-header">
+                    <span class="day-title">Day 13 - 14 | 01/10 (日) - 01/11 (一) Leeds ➔ 倫敦 ➔ 台灣</span>
+                    <span class="tag">完美賦歸</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1/10 下午</span> 從 Leeds 搭火車返回倫敦，最後採買購物
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1/11 17:00</span> 前往 Heathrow 機場辦理退稅與登機
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1/11 21:15</span> 搭機飛往台灣，帶著滿滿回憶回家！✈️
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 2. 路線地圖 -->
+        <div id="map" class="tab-content">
+            <div class="card">
+                <h2><i class="fa-solid fa-route"></i> 自駕與火車路線總覽</h2>
+                <p style="margin-bottom: 15px; color: var(--text-muted);">路線：倫敦 ➔ 巨石陣 ➔ 巴斯 ➔ 布里斯托 (自駕結束) ➔ 利物浦 ➔ 紐卡索 (達勒姆) ➔ 約克 ➔ 勒茲 ➔ 倫敦 (火車)</p>
+                <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2483868.528435198!2d-3.5186835005886634!3d52.88085429188092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!3m2!1d51.5072178!2d-0.1275862!4m5!1s0x487183ca2052c937%3A0xd65355609424e756!2sBath!3m2!1d51.381064!2d-2.359016!5e0!3m2!1szh-TW!2stw!4v1680000000000!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- 3. 行前準備 -->
+        <div id="prep" class="tab-content">
+            <div class="card">
+                <h2><i class="fa-solid fa-suitcase"></i> 行李檢查清單</h2>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox"> 護照（效期 6 個月以上）</label>
+                    <label class="checkbox-item"><input type="checkbox"> 國際駕照 + 台灣駕照正本</label>
+                    <label class="checkbox-item"><input type="checkbox"> 英規轉接頭 (Type G) 2-3個</label>
+                    <label class="checkbox-item"><input type="checkbox"> 信用卡（開通海外刷卡與PIN碼）</label>
+                    <label class="checkbox-item"><input type="checkbox"> 英國 eSIM / 上網卡</label>
+                    <label class="checkbox-item"><input type="checkbox"> 保暖大衣、圍巾、防水發熱衣</label>
+                    <label class="checkbox-item"><input type="checkbox"> 個人常備藥品、感冒藥</label>
+                    <label class="checkbox-item"><input type="checkbox"> 妹妹畢業典禮正式服裝</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fa-solid fa-ticket"></i> 預約憑證與交通資訊</h2>
+                <p><b>租車公司：</b> 倫敦取車 / Bristol 還車</p>
+                <p><b>火車票券：</b> LNER / Avanti West Coast（提前下載 National Rail App）</p>
+                <p><b>緊急電話：</b> 英國報警/救護車請撥 999 或 111（非緊急）</p>
+            </div>
+        </div>
+
+        <!-- 4. 約法三章 -->
+        <div id="rules" class="tab-content">
+            <div class="card">
+                <h2><i class="fa-solid fa-handshake"></i> 旅伴搞笑和平條約 (違反者請喝啤酒)</h2>
+                <ul class="rule-list">
+                    <li><b>第一條：駕駛至上條款</b><br>副駕不得睡覺！必須負責看導航、拿零食、切換 DJ 播歌，並適時給予駕駛誇獎。</li>
+                    <li><b>第二條：英國天氣情緒管理</b><br>如果下雨、天黑太早或遇到圓環走錯路，嚴禁發脾氣！一律用「這就是道地的英倫風情啦」帶過。</li>
+                    <li><b>第三條：拍照耐心原則</b><br>幫對方拍照必須拍到滿意為止，拍照者不得發出嘖聲，被照者不得要求超過 50 張。</li>
+                    <li><b>第四條：畢業典禮最高指令</b><br>1/8 妹妹畢業典禮當天，所有人必須化身「頂級親友攝影團」，捕捉最美的瞬間！</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. 分帳計算機 -->
+        <div id="split" class="tab-content">
+            <div class="card">
+                <h2><i class="fa-solid fa-coins"></i> 公費與分帳計算機 (GBP £)</h2>
+                <div class="calc-input">
+                    <input type="text" id="item-name" placeholder="消費項目（例如：巨石陣門票、城堡晚餐）">
+                    <input type="number" id="item-amount" placeholder="金額 (£)">
+                    <select id="payer">
+                        <option value="成員 A">成員 A 先付</option>
+                        <option value="成員 B">成員 B 先付</option>
+                        <option value="成員 C">成員 C 先付</option>
+                    </select>
+                    <button class="btn-primary" onclick="addExpense()">新增消費紀錄</button>
+                </div>
+                <div id="expense-list"></div>
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);">
+                <h3>總計：£ <span id="total-amount">0</span></h3>
+                <p id="split-result" style="margin-top: 10px; color: var(--accent-navy); font-weight: 600;"></p>
+            </div>
+        </div>
+
+        <!-- 6. 旅遊日記與相簿 -->
+        <div id="diary" class="tab-content">
+            <div class="card">
+                <h2><i class="fa-solid fa-pen-to-square"></i> 隨手記 & 回憶牆</h2>
+                <div class="calc-input">
+                    <textarea id="diary-note" rows="3" placeholder="記錄今天發生的搞笑事或感觸..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);"></textarea>
+                    <input type="file" id="diary-photo" accept="image/*">
+                    <button class="btn-primary" onclick="addDiary()">發佈日誌</button>
+                </div>
+                <div id="diary-list"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Tab 切換邏輯
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // 倒數計時器 (目標日期：2026/12/29 08:45)
+        const targetDate = new Date('December 29, 2026 08:45:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            } else {
+                document.querySelector('.countdown-container').innerHTML = "<b>🎉 英國之旅已經開啟囉！享受假期！</b>";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 分帳計算機邏輯
+        let expenses = [];
+        function addExpense() {
+            const name = document.getElementById('item-name').value;
+            const amount = parseFloat(document.getElementById('item-amount').value);
+            const payer = document.getElementById('payer').value;
+
+            if (!name || isNaN(amount)) {
+                alert('請輸入有效的項目名稱與金額！');
+                return;
+            }
+
+            expenses.push({ name, amount, payer });
+            updateExpenseUI();
+
+            document.getElementById('item-name').value = '';
+            document.getElementById('item-amount').value = '';
+        }
+
+        function updateExpenseUI() {
+            const list = document.getElementById('expense-list');
+            list.innerHTML = '';
+            let total = 0;
+
+            expenses.forEach((item) => {
+                total += item.amount;
+                const div = document.createElement('div');
+                div.style.padding = '8px 0';
+                div.style.borderBottom = '1px solid #eee';
+                div.innerText = `${item.payer} 付了 £${item.amount} — ${item.name}`;
+                list.appendChild(div);
+            });
+
+            document.getElementById('total-amount').innerText = total.toFixed(2);
+            const perPerson = (total / 3).toFixed(2); // 假設預設 3 人，可自行調整
+            document.getElementById('split-result').innerText = `平均每人應負擔：£${perPerson} (以 3 人計算)`;
+        }
+
+        // 日記發佈邏輯
+        function addDiary() {
+            const text = document.getElementById('diary-note').value;
+            const photoInput = document.getElementById('diary-photo');
+            const list = document.getElementById('diary-list');
+
+            if (!text && photoInput.files.length === 0) {
+                alert('請輸入文字或選擇照片！');
+                return;
+            }
+
+            const div = document.createElement('div');
+            div.className = 'diary-entry';
+            
+            let html = `<p style="font-size:0.85rem; color:#888;">${new Date().toLocaleString()}</p><p>${text}</p>`;
+
+            if (photoInput.files && photoInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    html += `<img src="${e.target.result}">`;
+                    div.innerHTML = html;
+                    list.prepend(div);
+                }
+                reader.readAsDataURL(photoInput.files[0]);
+            } else {
+                div.innerHTML = html;
+                list.prepend(div);
+            }
+
+            document.getElementById('diary-note').value = '';
+            photoInput.value = '';
+        }
+    </script>
+</body>
+</html><p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
 <p class="p1"><span class="Apple-converted-space">        </span>body {</p>
 <p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
